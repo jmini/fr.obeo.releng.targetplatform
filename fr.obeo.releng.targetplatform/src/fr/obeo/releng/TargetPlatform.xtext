@@ -10,7 +10,7 @@ TargetPlatform:
 ;
 	
 Location:
-	'location' uri=STRING ('{'
+	'location' uri=STRING ('['id=STRING']')? ('{'
 		('with' options+=Option (',' options+=Option)*)?
 		(ius+=IU (ius+=IU)*)?
 	'}')?

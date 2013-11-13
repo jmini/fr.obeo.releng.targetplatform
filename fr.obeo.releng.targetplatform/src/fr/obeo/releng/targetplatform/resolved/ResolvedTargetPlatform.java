@@ -64,7 +64,7 @@ public class ResolvedTargetPlatform {
 				optionSet = EnumSet.copyOf(location.getOptions());
 			}
 			
-			locations.add(new ResolvedLocation(location.getUri(), ius, optionSet));
+			locations.add(new ResolvedLocation(location.getUri(), location.getId(), ius, optionSet));
 			subMonitor.worked(1);
 		}
 		return new ResolvedTargetPlatform(targetPlatform.getName(), locations);

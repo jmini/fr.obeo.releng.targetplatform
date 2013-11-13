@@ -29,15 +29,17 @@ import fr.obeo.releng.targetplatform.Option;
 
 public class ResolvedLocation {
 	private final URI uri;
+	private final String id;
 	private final List<ResolvedIU> latestIUs;
 	private final EnumSet<Option> options;
 
-	public ResolvedLocation(String uri, List<ResolvedIU> latestIUs, EnumSet<Option> options) throws URISyntaxException {
-		this(new URI(uri), latestIUs, options);
+	public ResolvedLocation(String uri, String id, List<ResolvedIU> latestIUs, EnumSet<Option> options) throws URISyntaxException {
+		this(new URI(uri), id,  latestIUs, options);
 	}
 
-	public ResolvedLocation(URI uri, List<ResolvedIU> latestIUs, EnumSet<Option> options) {
+	public ResolvedLocation(URI uri, String id, List<ResolvedIU> latestIUs, EnumSet<Option> options) {
 		this.uri = uri;
+		this.id = id;
 		this.latestIUs = latestIUs;
 		this.options = options;
 	}
@@ -62,6 +64,10 @@ public class ResolvedLocation {
 	
 	public URI getURI() {
 		return uri;
+	}
+	
+	public String getId() {
+		return id;
 	}
 	
 	public List<ResolvedIU> getLatestIUs() {
